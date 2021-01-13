@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Export Extensions.cs" />
     <Compile Include="XMExporter.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />

@@ -28,15 +28,44 @@ namespace MBXml
                                                          new Order(14, "Eddawdi Nawal", "PRD-1", 2000)
                                                      };
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
-            XDocument doc = new XDocument(new XElement("Orders",
-                                                       new XElement("Client", "CLT-1"),
-                                                       new XElement("Total", "5000 MAD")));
-            doc.Save(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\xxx.xml");
+            //XDocument doc = new XDocument(new XElement("Orders",
+            //                                           new XElement("Client", "CLT-1"),
+            //                                           new XElement("Total", "5000 MAD")));
+            //doc.Save(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\xxx.xml");
 
-            Console.WriteLine("Saved");
+            //-------------------------------------------------------------------------------------------------------------------------------
+            //Examples
+            //-------------------------------------------------------------------------------------------------------------------------------
+
+            //---------------------------------
+            /* ex 1 - Export data to XML*/
+            //---------------------------------
+            //XMExporter xporter = new XMExporter();
+
+            //Console.WriteLine("Wait...");
+
+            //await  xporter.ExportAsync(Orders,"Orders","Order",Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\xxx.xml");
+
+            //Console.WriteLine("Exported");
+
+            //---------------------------------
+            /* ex 2 - Export data to XML*/
+            //---------------------------------
+            //Console.WriteLine( "Wait..." );
+            //await Orders.ExportAsXMLAsync( "Orders" , "Order" , Environment.GetFolderPath( Environment.SpecialFolder.Desktop ) + "\\xxx.xml" );
+            //Console.WriteLine( "Exported" );
+
+
+
+
+
+            //---------------------------------
+            /*Import XML data*/
+            //---------------------------------
+
 
 
             Console.ReadKey();
