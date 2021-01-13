@@ -14,7 +14,7 @@ namespace MBXml
     class XMExporter
     {
 
-        private bool _Export<T>(List<T> dataAsList, string rootElementName,string path)
+        private bool _Export<T>(List<T> dataAsList, string rootElementName,string childElementsName,string path)
         {
             XDocument xdoc = new XDocument(new XElement(rootElementName));
 
@@ -27,7 +27,19 @@ namespace MBXml
 
             foreach (var d in dataAsList)
             {
-                
+                xdoc.Root.Add(new XElement(childElementsName));
+
+
+                    xdoc.Root.Element(childElementsName).Add(
+
+                    for (int i = 0; i < PropertiesLength; i++)
+                    { 
+                        new XElement(dataAsList_Properties[i].Name, dataAsList_Properties[i].GetValue(d));
+                    }
+
+                    );
+  
+
             }
 
 
