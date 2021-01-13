@@ -40,7 +40,7 @@ namespace MBXml
             /// <param name="childElementsName">The name of the Child elements</param>
             /// <param name="path">The path to be export the data into</param>
             /// <returns></returns>
-            public static Task<bool> ExportAsXMLAsync<T>(this List<T> dataAsList, string rootElementName, string childElementsName, string path)
+            public static Task<bool> ExportAsXMLAsync<T>(this List<T> dataAsList, string rootElementName, string childElementsName, string path) where T : class
             {
                 return new XMExporter().ExportAsync(dataAsList, rootElementName, childElementsName, path);
             }

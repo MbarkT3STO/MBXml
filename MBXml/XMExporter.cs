@@ -106,7 +106,7 @@ namespace MBXml
         /// <param name="childElementsName">The name of the Child elements</param>
         /// <param name="path">The path to be export the data into</param>
         /// <returns></returns>
-        public Task<bool> ExportAsync<T>(List<T> dataAsList, string rootElementName, string childElementsName, string path)
+        public Task<bool> ExportAsync<T>(List<T> dataAsList, string rootElementName, string childElementsName, string path) where T : class
         {
             return Task<bool>.Factory.StartNew(() => _Export(dataAsList, rootElementName, childElementsName, path));
         }

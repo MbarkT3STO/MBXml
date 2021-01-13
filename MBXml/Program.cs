@@ -44,19 +44,16 @@ namespace MBXml
             /* ex 1 - Export data to XML*/
             //---------------------------------
             //XMExporter xporter = new XMExporter();
-
             //Console.WriteLine("Wait...");
-
             //await  xporter.ExportAsync(Orders,"Orders","Order",Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\xxx.xml");
-
             //Console.WriteLine("Exported");
 
             //---------------------------------
             /* ex 2 - Export data to XML*/
             //---------------------------------
-            //Console.WriteLine( "Wait..." );
-            //await Orders.ExportAsXMLAsync( "Orders" , "Order" , Environment.GetFolderPath( Environment.SpecialFolder.Desktop ) + "\\xxx.xml" );
-            //Console.WriteLine( "Exported" );
+            Console.WriteLine( "Wait..." );
+            await Orders.ExportAsXMLAsync( "Orders" , "Order" , Environment.GetFolderPath( Environment.SpecialFolder.Desktop ) + "\\xxx.xml" );
+            Console.WriteLine( "Exported" );
 
 
 
