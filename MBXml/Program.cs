@@ -40,10 +40,16 @@ namespace MBXml
             //Examples
             //-------------------------------------------------------------------------------------------------------------------------------
 
+
+            //-------------------------------------------------------------------------------------------------------------------------------
+            //Export data to XML
+            //-------------------------------------------------------------------------------------------------------------------------------
+
+            //XMExporter xporter = new XMExporter();
+
             //---------------------------------
             /* ex 1 - Export data to XML*/
             //---------------------------------
-            //XMExporter xporter = new XMExporter();
             //Console.WriteLine("Wait...");
             //await  xporter.ExportAsync(Orders,"Orders","Order",Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\xxx.xml");
             //Console.WriteLine("Exported");
@@ -56,13 +62,37 @@ namespace MBXml
             //Console.WriteLine( "Exported" );
 
 
+            //-------------------------------------------------------------------------------------------------------------------------------
+            //Import data from XML
+            //-------------------------------------------------------------------------------------------------------------------------------
 
-
+            XMImporter Importer = new XMImporter();
 
             //---------------------------------
-            /*Import XML data*/
+            /*Import XML data from local storage*/
             //---------------------------------
 
+            Console.WriteLine("Wait...");
+
+            //var Doc =  await Importer.ImportAsync(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\XXX.xml");
+            var Doc =  await Importer.ImportAsync("https://file.io/3YEFNjb48xHW");
+
+            var R = (from x in Doc.Root.Elements("Order")
+                     select new
+                            {
+                                ID      = x.Element("ID").Value,
+                                Client  = x.Element("Client").Value,
+                                Product = x.Element("Product").Value,
+                                Total   = x.Element("Total").Value
+                            });
+
+
+            foreach (var o in R)
+            {
+                Console.WriteLine($"{o.ID}, {o.Client}, {o.Product}, {o.Total}");
+            }
+
+            Console.WriteLine("Done...");
 
 
             Console.ReadKey();
