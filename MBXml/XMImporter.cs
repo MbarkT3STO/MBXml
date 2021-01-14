@@ -10,7 +10,7 @@ namespace MBXml
     /// <summary>
     /// To import data from an XML file
     /// </summary>
-    class XMImporter
+    public class XMImporter
     {
 
         private XDocument _Import(string filePath)

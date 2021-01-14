@@ -11,7 +11,7 @@ namespace MBXml
     /// <summary>
     /// To Export data as an XML file
     /// </summary>
-    class XMExporter
+    public class XMExporter
     {
 
         private bool _Export<T>(List<T> dataAsList, string rootElementName,string childElementsName,string path)
