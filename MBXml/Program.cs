@@ -75,24 +75,49 @@ namespace MBXml
             Console.WriteLine("Wait...");
 
             //var Doc =  await Importer.ImportAsync(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\XXX.xml");
-            var Doc =  await Importer.ImportAsync("https://ia801505.us.archive.org/17/items/xxx_20210114/xxx.xml");
 
-            var R = (from x in Doc.Root.Elements("Order")
-                     select new
-                            {
-                                ID      = x.Element("ID").Value,
-                                Client  = x.Element("Client").Value,
-                                Product = x.Element("Product").Value,
-                                Total   = x.Element("Total").Value
-                            });
+            //var R = (from x in Doc.Root.Elements("Order")
+            //         select new
+            //                {
+            //                    ID      = x.Element("ID").Value,
+            //                    Client  = x.Element("Client").Value,
+            //                    Product = x.Element("Product").Value,
+            //                    Total   = x.Element("Total").Value
+            //                });
 
 
-            foreach (var o in R)
-            {
-                Console.WriteLine($"{o.ID}, {o.Client}, {o.Product}, {o.Total}");
-            }
+            //foreach (var o in R)
+            //{
+            //    Console.WriteLine($"{o.ID}, {o.Client}, {o.Product}, {o.Total}");
+            //}
 
-            Console.WriteLine("Done...");
+
+
+
+
+
+            //---------------------------------
+            /*Import XML data from Web file*/
+            //---------------------------------
+
+            //var Doc =  await Importer.ImportAsync("https://ia801505.us.archive.org/17/items/xxx_20210114/xxx.xml");
+
+            //var R = (from x in Doc.Root.Elements("Order")
+            //         select new
+            //                {
+            //                    ID      = x.Element("ID").Value,
+            //                    Client  = x.Element("Client").Value,
+            //                    Product = x.Element("Product").Value,
+            //                    Total   = x.Element("Total").Value
+            //                });
+
+
+            //foreach (var o in R)
+            //{
+            //    Console.WriteLine($"{o.ID}, {o.Client}, {o.Product}, {o.Total}");
+            //}
+
+            Console.WriteLine( "Done..." );
 
 
             Console.ReadKey();
